@@ -7,6 +7,16 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    colors: {
+      "blue": "#398299",
+      "grey": "#1E1E1E",
+      "black": "#000000",
+      "offwhite": "#F9F9F9",
+      "white": "#FFFFFF",
+    },
+    fontFamily: {
+      sans: ["gomme-sans", "sans-serif"]
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -15,6 +25,7 @@ const config: Config = {
       },
     },
   },
+
   plugins: [],
 };
 export default config;
