@@ -3,13 +3,13 @@ import Lottie from 'lottie-react'
 import animationsData from '../../../public/hero.json'
 const Hero = () => {
     return (
-        <div className="grid grid-cols-2 justify-self-center">
+        <div className="flex flex-col justify-center items-center md:flex-row">
             <div className="pb-9 sm:pb-40 px-20 sm:pt-24 lg:pb-48">
                 <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
                     <div className="sm:max-w-lg pt-40">
-                        <h1 className="text-5xl font-bold tracking-tight text-grey sm:text-3xl"><span className="text-blue">backend</span> heavy</h1>
-                        <h1 className="text-5xl font-bold tracking-tight text-grey sm:text-3xl"><span className="text-blue">full stack</span> engineer</h1>
-                        <p className="mt-4 text-xl tracking-tight text-grey">This year, our new summer collection will shelter you from the harsh elements of a world that care if you live or die.</p>
+                        <h1 className="text-5xl font-bold tracking-tight text-grey sm:text-5xl"><span className="text-blue">backend</span> heavy</h1>
+                        <h1 className="text-5xl font-bold tracking-tight text-grey sm:text-5xl"><span className="text-blue">full stack</span> engineer</h1>
+                        <p className="mt-4 text-xl tracking-tight text-grey md:text-md">This year, our new summer collection will shelter you from the harsh elements of a world that care if you live or die.</p>
                         <div className="mt-4">
                             <button
                                 type="submit"
@@ -26,7 +26,7 @@ const Hero = () => {
                 <div className="mx-auto max-w-7xl sm:static sm:px-6">
                     <div className="sm:max-w-lg">
                         <Lottie
-                            className="h-auto w-auto sm:h-50 w-50"
+                            className="h-auto w-auto sm:h-50"
                             animationData={animationsData}
                         />
                     </div>
