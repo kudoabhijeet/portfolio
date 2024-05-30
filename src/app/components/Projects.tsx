@@ -8,9 +8,7 @@ const Projects = () => {
             <div className="m-5 flex flex-col justify-center gap-5 sm:flex-row">
                 <ProjectCard />
                 <ProjectCard />
-
                 <ProjectCard />
-
                 <ProjectCard />
 
             </div>

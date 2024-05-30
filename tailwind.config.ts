@@ -13,6 +13,7 @@ const config: Config = {
       "black": "#000000",
       "offwhite": "#F9F9F9",
       "white": "#FFFFFF",
+      "card": "#EAEAEA"
     },
     fontFamily: {
       sans: ["gomme-sans", "sans-serif"]

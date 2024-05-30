@@ -1,8 +1,9 @@
+import Image from "next/image";
 const ProjectCard = () => {
     return (
-        <div className="max-w-sm p-6 bg-white border border-grey rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div className="max-w-sm p-6 bg-card border border-grey rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <div className="mb-2 text-2xl font-bold tracking-tight text-blue">project name</div>
-            {/* <Image src="https://dummyimage.com/640x360/fff/aaa" alt="image" height={300} width={300}></Image> */}
+            <Image src="https://dummyimage.com/640x360/fff/aaa" alt="image" height={300} width={300}></Image>
             <div className="mb-3 text-sm font-normal">description</div>
             <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue rounded-lg">
                 Read more
