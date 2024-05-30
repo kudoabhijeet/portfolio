@@ -1,6 +1,6 @@
 'use client'
 import Lottie from 'lottie-react'
-import animationsData from '../../../public/hero.json'
+import animationsData from '../public/hero.json'
 const Hero = () => {
     return (
         <div className="flex flex-col justify-center gap-10 items-center md:flex-row">
