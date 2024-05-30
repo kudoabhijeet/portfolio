@@ -6,7 +6,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
 
     return (
-        <div className="container mx-auto flex flex-wrap justify-center pt-8 md:flex-row items-center">
+        <div className="container mx-auto mb-10 flex flex-wrap justify-center pt-8 md:flex-row items-center">
             <nav className="bg-blue shadow-xl px-5 py-2 text-white rounded-full">
                 <div className="block lg:hidden">
                     <button

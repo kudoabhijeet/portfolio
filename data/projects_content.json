@@ -1,0 +1,25 @@
+{
+  "projects": [
+    {
+      "id": "0",
+      "name": "URL Shortener",
+      "description": "A short url application, used to created short links, aliases against a long url.",
+      "image": "https://dummyimage.com/640x360/fff/aaa",
+      "link": ""
+    },
+    {
+      "id": "1",
+      "name": "UniSHARE Mobile App",
+      "description": "Resource and educational material sharing android application.",
+      "image": "https://dummyimage.com/640x360/fff/aaa",
+      "link": ""
+    },
+    {
+      "id": "2",
+      "name": "File Transfer Service",
+      "description": "File transfer service within server and client with Go and gRPC. ",
+      "image": "https://dummyimage.com/640x360/fff/aaa",
+      "link": ""
+    }
+  ]
+}
