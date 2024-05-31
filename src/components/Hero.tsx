@@ -1,11 +1,11 @@
 'use client'
 import Lottie from 'lottie-react'
-import animationsData from '../public/hero.json'
+import animationsData from '../../public/hero.json'
 import data from '../data/hero_content.json'
 
 const Hero = () => {
     return (
-        <div className="flex flex-col justify-center mt-40 gap-10 items-center md:flex-row">
+        <div className="flex flex-col justify-center gap-10 items-center md:flex-row">
             <div className="pb-9 sm:pb-40 sm:pt-24 lg:pb-48">
                 <div className="relative mx-auto max-w-7xl px-4 sm:static ">
                     <div className="sm:max-w-lg">
