@@ -7,7 +7,7 @@ import Recommendations from "../components/Recommendations";
 export default function Home() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
       <Projects />
       <Recommendations />
