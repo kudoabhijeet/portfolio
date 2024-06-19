@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background-color: #f5fffa;
+  background-color: #f5f5f5;
 }
 
 @layer utilities {
@@ -25,5 +25,3 @@ body {
     --background-end-rgb: 0, 0, 0;
   }
 }
-
-
