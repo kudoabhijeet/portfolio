@@ -1,0 +1,25 @@
+{
+  "projects": [
+    {
+      "id": "0",
+      "name": "URL Shortener",
+      "description": "A short url application, used to created short links, aliases against a long url.",
+      "image": "https://utfs.io/f/05980750-fa61-4f25-8764-7bd5fc4924fe-1sj3pb.png",
+      "link": "https://url-app.kudoabhijeet.com/"
+    },
+    {
+      "id": "1",
+      "name": "UniSHARE Mobile App",
+      "description": "Resource and educational material sharing android application.",
+      "image": "https://utfs.io/f/ccb5cd36-98d3-4345-acf0-00100de9939e-im4yrj.png",
+      "link": "https://github.com/kudoabhijeet/UniSHARE-Legacy"
+    },
+    {
+      "id": "2",
+      "name": "File Transfer Service",
+      "description": "File transfer service within server and client with Go and gRPC. ",
+      "image": "https://utfs.io/f/5b52ec8d-ff27-4589-9707-ca0a97f5dd86-kigsa2.png",
+      "link": "https://github.com/kudoabhijeet/file-transfer-grpc"
+    }
+  ]
+}
