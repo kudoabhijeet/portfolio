@@ -7,7 +7,7 @@ const Navbar = () => {
 
     return (
         <div className="container mx-auto mb-10 flex flex-wrap justify-center pt-8 md:flex-row items-center">
-            <nav className="bg-blue shadow-xl px-5 py-2 text-white rounded-full">
+            <nav className="bg-blue shadow-2xl px-5 py-2 text-white rounded-full">
                 <div className="block lg:hidden">
                     <button
                         onClick={() => setIsOpen(!isOpen)}
@@ -36,13 +36,13 @@ const Navbar = () => {
                             <div className="hover:underline active:font-bold">home</div>
                         </Link>
                         <Link href="/meet">
-                            <div className="hover:underline">meet</div>
+                            <div className="hover:underline active:font-bold">meet</div>
                         </Link>
                         <Link href="/uses">
-                            <div className="hover:underline">uses</div>
+                            <div className="hover:underline active:font-bold">uses</div>
                         </Link>
                         <Link href="/resume">
-                            <div className="hover:underline ">resume</div>
+                            <div className="hover:underline active:font-bold">resume</div>
                         </Link>
                     </div>
                 </div>
