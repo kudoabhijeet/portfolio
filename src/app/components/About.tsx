@@ -1,28 +1,97 @@
+import { motion } from "motion/react";
+import { Code2, Coffee, Rocket } from "lucide-react";
+
 export function About() {
+  const highlights = [
+    {
+      icon: <Code2 size={20} />,
+      label: "Clean Code",
+      description: "Writing maintainable, scalable solutions",
+    },
+    {
+      icon: <Rocket size={20} />,
+      label: "Performance",
+      description: "Optimizing for speed and efficiency",
+    },
+    {
+      icon: <Coffee size={20} />,
+      label: "Continuous Learning",
+      description: "Always exploring new technologies",
+    },
+  ];
+
   return (
-    <section id="about" className="py-24 px-6 lg:px-8 bg-gray-50">
+    <section id="about" className="py-24 px-6 lg:px-8 bg-gray-50 dark:bg-gray-900/50">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-5xl tracking-tight mb-12">About Me</h2>
-        
-        <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-          <p>
-            I'm a software engineer with a passion for building beautiful, functional, 
-            and user-centric digital experiences. With several years of experience in 
-            the industry, I've had the opportunity to work on diverse projects ranging 
-            from web applications to mobile platforms.
-          </p>
-          
-          <p>
-            My approach combines technical expertise with creative problem-solving. 
-            I believe in writing clean, maintainable code and staying current with 
-            the latest technologies and best practices in software development.
-          </p>
-          
-          <p>
-            When I'm not coding, you'll find me exploring new technologies, contributing 
-            to open-source projects, or sharing knowledge with the developer community. 
-            I'm always excited to take on new challenges and collaborate on innovative projects.
-          </p>
+        <motion.h2
+          className="text-4xl md:text-5xl tracking-tight mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          About Me
+        </motion.h2>
+
+        <div className="space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-12">
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            I&apos;m a software engineer with a passion for building beautiful,
+            functional, and user-centric digital experiences. With several years
+            of experience in the industry, I&apos;ve had the opportunity to work
+            on diverse projects ranging from web applications to mobile
+            platforms.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            My approach combines technical expertise with creative
+            problem-solving. I believe in writing clean, maintainable code and
+            staying current with the latest technologies and best practices in
+            software development.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            When I&apos;m not coding, you&apos;ll find me exploring new
+            technologies, contributing to open-source projects, or sharing
+            knowledge with the developer community. I&apos;m always excited to
+            take on new challenges and collaborate on innovative projects.
+          </motion.p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {highlights.map((item, index) => (
+            <motion.div
+              key={index}
+              className="p-6 bg-white dark:bg-gray-800/50 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-primary/30 hover:shadow-lg dark:hover:shadow-primary/5 transition-all duration-300 group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.15 * index }}
+              whileHover={{ y: -4 }}
+            >
+              <div className="p-2.5 bg-primary/10 text-primary rounded-lg w-fit mb-3 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                {item.icon}
+              </div>
+              <h3 className="text-lg font-medium mb-1">{item.label}</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                {item.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

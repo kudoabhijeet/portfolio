@@ -12,23 +12,73 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center px-6 lg:px-8"
+      className="min-h-screen flex items-center justify-center px-6 lg:px-8 relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-emerald-50/40 dark:from-gray-950 dark:via-gray-900 dark:to-emerald-950/40"
     >
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
+          animate={{ y: [0, -30, 0], x: [0, 15, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 -right-32 w-96 h-96 bg-primary/15 rounded-full blur-3xl"
+          animate={{ y: [0, 30, 0], x: [0, -15, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-primary/15 rounded-full"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-primary/10 rounded-full"
+          animate={{ rotate: -360 }}
+          transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-primary/8 rounded-full"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+        />
+      </div>
+
+      <div className="max-w-4xl mx-auto text-center relative z-10">
+        <motion.div
+          className="mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-medium rounded-full">
+            Available for opportunities
+          </span>
+        </motion.div>
+
         <div className="mb-6">
           <motion.h1
-            className="text-5xl md:text-7xl lg:text-8xl tracking-tight mb-6"
+            className="text-5xl md:text-7xl lg:text-8xl tracking-tight mb-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            Software Engineer
+            Abhijeet{" "}
+            <span className="bg-gradient-to-r from-primary via-emerald-400 to-teal-500 bg-clip-text text-transparent">
+              Prasad
+            </span>
           </motion.h1>
           <motion.p
-            className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed"
+            className="text-2xl md:text-3xl text-gray-400 dark:text-gray-500 tracking-wide font-light mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
+          >
+            Software Engineer
+          </motion.p>
+          <motion.p
+            className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           >
             Building elegant solutions to complex problems. Passionate about
             creating scalable applications and clean code.
@@ -36,41 +86,41 @@ export function Hero() {
         </div>
 
         <motion.div
-          className="flex items-center justify-center gap-4 mb-12"
+          className="flex items-center justify-center gap-3 mb-12"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.45 }}
         >
           <motion.a
             href="https://github.com/kudoabhijeet"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 hover:bg-gray-100 rounded-full transition-colors"
+            className="p-3 bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white rounded-full transition-all duration-200"
             aria-label="GitHub"
-            whileHover={{ scale: 1.1, rotate: 5 }}
+            whileHover={{ scale: 1.1, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Github size={24} />
+            <Github size={22} />
           </motion.a>
           <motion.a
             href="https://linkedin.com/in/kudoabhijeet"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 hover:bg-gray-100 rounded-full transition-colors"
+            className="p-3 bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white rounded-full transition-all duration-200"
             aria-label="LinkedIn"
-            whileHover={{ scale: 1.1, rotate: -5 }}
+            whileHover={{ scale: 1.1, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Linkedin size={24} />
+            <Linkedin size={22} />
           </motion.a>
           <motion.a
             href="mailto:a@ku2.me"
-            className="p-3 hover:bg-gray-100 rounded-full transition-colors"
+            className="p-3 bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white rounded-full transition-all duration-200"
             aria-label="Email"
-            whileHover={{ scale: 1.1, rotate: 5 }}
+            whileHover={{ scale: 1.1, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Mail size={24} />
+            <Mail size={22} />
           </motion.a>
         </motion.div>
 
@@ -82,8 +132,8 @@ export function Hero() {
         >
           <motion.button
             onClick={() => scrollToSection("projects")}
-            className="px-8 py-3 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors flex items-center gap-2"
-            whileHover={{ scale: 1.05, x: 5 }}
+            className="px-8 py-3 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors flex items-center gap-2 shadow-lg shadow-primary/25"
+            whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
             View Projects
@@ -96,8 +146,8 @@ export function Hero() {
           </motion.button>
           <motion.button
             onClick={() => scrollToSection("contact")}
-            className="px-8 py-3 border border-gray-300 rounded-full hover:border-primary hover:text-primary transition-colors"
-            whileHover={{ scale: 1.05 }}
+            className="px-8 py-3 border border-gray-300 dark:border-gray-700 rounded-full hover:border-primary hover:text-primary transition-colors"
+            whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
             Get in Touch
