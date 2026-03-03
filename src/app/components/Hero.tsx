@@ -1,5 +1,6 @@
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { motion } from "motion/react";
+import { personalInfo } from "../data/portfolio";
 
 export function Hero() {
   const scrollToSection = (id: string) => {
@@ -43,16 +44,18 @@ export function Hero() {
       </div>
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        <motion.div
-          className="mb-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-medium rounded-full">
-            Available for opportunities
-          </span>
-        </motion.div>
+        {personalInfo.availableBadge && (
+          <motion.div
+            className="mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-medium rounded-full">
+              Available for opportunities
+            </span>
+          </motion.div>
+        )}
 
         <div className="mb-6">
           <motion.h1
@@ -61,9 +64,9 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            Abhijeet{" "}
+            {personalInfo.firstName}{" "}
             <span className="bg-gradient-to-r from-primary via-emerald-400 to-teal-500 bg-clip-text text-transparent">
-              Prasad
+              {personalInfo.lastName}
             </span>
           </motion.h1>
           <motion.p
@@ -72,7 +75,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
           >
-            Software Engineer
+            {personalInfo.title}
           </motion.p>
           <motion.p
             className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed"
@@ -80,8 +83,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           >
-            Building elegant solutions to complex problems. Passionate about
-            creating scalable applications and clean code.
+            {personalInfo.tagline}
           </motion.p>
         </div>
 
@@ -92,7 +94,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.45 }}
         >
           <motion.a
-            href="https://github.com/kudoabhijeet"
+            href={personalInfo.socials.github}
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white rounded-full transition-all duration-200"
@@ -103,7 +105,7 @@ export function Hero() {
             <Github size={22} />
           </motion.a>
           <motion.a
-            href="https://linkedin.com/in/kudoabhijeet"
+            href={personalInfo.socials.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white rounded-full transition-all duration-200"
@@ -114,7 +116,7 @@ export function Hero() {
             <Linkedin size={22} />
           </motion.a>
           <motion.a
-            href="mailto:a@ku2.me"
+            href={`mailto:${personalInfo.email}`}
             className="p-3 bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white rounded-full transition-all duration-200"
             aria-label="Email"
             whileHover={{ scale: 1.1, y: -2 }}

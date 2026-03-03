@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Code2, Coffee, Rocket } from "lucide-react";
+import { aboutParagraphs } from "../data/portfolio";
 
 export function About() {
   const highlights = [
@@ -34,42 +35,17 @@ export function About() {
         </motion.h2>
 
         <div className="space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-12">
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            I&apos;m a software engineer with a passion for building beautiful,
-            functional, and user-centric digital experiences. With several years
-            of experience in the industry, I&apos;ve had the opportunity to work
-            on diverse projects ranging from web applications to mobile
-            platforms.
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            My approach combines technical expertise with creative
-            problem-solving. I believe in writing clean, maintainable code and
-            staying current with the latest technologies and best practices in
-            software development.
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            When I&apos;m not coding, you&apos;ll find me exploring new
-            technologies, contributing to open-source projects, or sharing
-            knowledge with the developer community. I&apos;m always excited to
-            take on new challenges and collaborate on innovative projects.
-          </motion.p>
+          {aboutParagraphs.map((paragraph, index) => (
+            <motion.p
+              key={index}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 * (index + 1) }}
+            >
+              {paragraph}
+            </motion.p>
+          ))}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

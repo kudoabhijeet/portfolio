@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { useTheme } from "next-themes";
+import { personalInfo } from "../data/portfolio";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -70,7 +71,7 @@ export function Navigation() {
             onClick={() => scrollToSection("hero")}
             className="text-xl font-semibold tracking-tight hover:opacity-70 transition-opacity"
           >
-            Abhijeet Prasad
+            {personalInfo.name}
           </button>
 
           <div className="hidden md:flex items-center gap-8">

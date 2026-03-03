@@ -1,57 +1,8 @@
 import { ExternalLink, Github } from "lucide-react";
 import { motion } from "motion/react";
-
-interface Project {
-  title: string;
-  description: string;
-  technologies: string[];
-  liveUrl?: string;
-  githubUrl?: string;
-  imageUrl: string;
-}
+import { projects } from "../data/portfolio";
 
 export function Projects() {
-  const projects: Project[] = [
-    {
-      title: "E-Commerce Platform",
-      description:
-        "Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.",
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com/kudoabhijeet",
-      imageUrl:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=450&fit=crop&q=80",
-    },
-    {
-      title: "Task Management App",
-      description:
-        "Collaborative task management tool with real-time updates, team collaboration features, and analytics.",
-      technologies: ["TypeScript", "Next.js", "Firebase", "Tailwind CSS"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com/kudoabhijeet",
-      imageUrl:
-        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&q=80",
-    },
-    {
-      title: "Weather Dashboard",
-      description:
-        "Real-time weather application with location-based forecasts, interactive maps, and weather alerts.",
-      technologies: ["React", "OpenWeather API", "Chart.js"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com/kudoabhijeet",
-      imageUrl:
-        "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&h=450&fit=crop&q=80",
-    },
-    {
-      title: "Portfolio CMS",
-      description:
-        "Headless CMS for managing portfolio content with markdown support and media management.",
-      technologies: ["Vue.js", "Express", "MongoDB", "AWS S3"],
-      githubUrl: "https://github.com/kudoabhijeet",
-      imageUrl:
-        "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=450&fit=crop&q=80",
-    },
-  ];
 
   return (
     <section id="projects" className="py-24 px-6 lg:px-8 bg-gray-50 dark:bg-gray-900/50">

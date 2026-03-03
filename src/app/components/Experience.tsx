@@ -9,42 +9,9 @@ interface ExperienceItem {
   current?: boolean;
 }
 
-export function Experience() {
-  const experiences: ExperienceItem[] = [
-    {
-      title: "Senior Software Engineer",
-      company: "Tech Company",
-      period: "2023 - Present",
-      current: true,
-      description: [
-        "Led development of microservices architecture serving 1M+ users",
-        "Mentored junior developers and conducted code reviews",
-        "Improved application performance by 40% through optimization",
-      ],
-    },
-    {
-      title: "Software Engineer",
-      company: "Startup Inc",
-      period: "2021 - 2023",
-      description: [
-        "Built and maintained full-stack web applications using React and Node.js",
-        "Collaborated with design team to implement responsive UI components",
-        "Implemented CI/CD pipelines reducing deployment time by 60%",
-      ],
-    },
-    {
-      title: "Junior Developer",
-      company: "Digital Agency",
-      period: "2019 - 2021",
-      description: [
-        "Developed client websites and web applications",
-        "Worked with REST APIs and third-party integrations",
-        "Participated in agile development processes",
-      ],
-    },
-  ];
+import { experience as experiences } from "../data/portfolio";
 
-  return (
+export function Experience() {  return (
     <section id="experience" className="py-24 px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <motion.h2

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Send, Github, Linkedin, Mail, Twitter } from "lucide-react";
 import { motion } from "motion/react";
+import { personalInfo } from "../data/portfolio";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -27,10 +28,10 @@ export function Contact() {
   };
 
   const socials = [
-    { href: "mailto:a@ku2.me", icon: <Mail size={20} />, label: "a@ku2.me", external: false },
-    { href: "https://github.com/kudoabhijeet", icon: <Github size={20} />, label: "GitHub", external: true },
-    { href: "https://linkedin.com/in/kudoabhijeet", icon: <Linkedin size={20} />, label: "LinkedIn", external: true },
-    { href: "https://twitter.com/kudoabhijeet", icon: <Twitter size={20} />, label: "Twitter", external: true },
+    { href: `mailto:${personalInfo.email}`, icon: <Mail size={20} />, label: personalInfo.email, external: false },
+    { href: personalInfo.socials.github, icon: <Github size={20} />, label: "GitHub", external: true },
+    { href: personalInfo.socials.linkedin, icon: <Linkedin size={20} />, label: "LinkedIn", external: true },
+    { href: personalInfo.socials.twitter, icon: <Twitter size={20} />, label: "Twitter", external: true },
   ];
 
   const inputClasses =

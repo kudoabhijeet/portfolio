@@ -65,7 +65,16 @@ export const experience = [
   },
 ];
 
-export const projects = [
+export interface ProjectData {
+  title: string;
+  description: string;
+  technologies: string[];
+  imageUrl: string;
+  liveUrl?: string;
+  githubUrl?: string;
+}
+
+export const projects: ProjectData[] = [
   {
     title: "OmniCentral & EmaarMind",
     description:

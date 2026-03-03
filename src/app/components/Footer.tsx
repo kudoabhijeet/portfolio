@@ -1,4 +1,5 @@
-import { Heart } from 'lucide-react';
+import { Heart } from "lucide-react";
+import { personalInfo } from "../data/portfolio";
 
 export function Footer() {
   return (
@@ -6,7 +7,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-600 dark:text-gray-400 text-sm flex items-center gap-2">
-            Built with <Heart size={16} className="text-red-500" /> by Abhijeet Prasad
+            Built with <Heart size={16} className="text-red-500" /> by {personalInfo.name}
           </p>
           
           <p className="text-gray-500 dark:text-gray-500 text-sm">

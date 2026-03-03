@@ -1,45 +1,28 @@
 import { Code, Database, Globe, Server, Smartphone, Wrench } from 'lucide-react';
 import { motion } from 'motion/react';
+import { skillCategories } from '../data/portfolio';
 
-interface SkillCategory {
-  title: string;
-  icon: React.ReactNode;
-  skills: string[];
-}
+// Map icons dynamically based on category title
+const getIconForCategory = (title: string) => {
+  switch (title.toLowerCase()) {
+    case 'languages':
+      return <Code size={24} />;
+    case 'frontend':
+      return <Globe size={24} />;
+    case 'backend':
+      return <Server size={24} />;
+    case 'database':
+      return <Database size={24} />;
+    case 'cloud & devops':
+      return <Wrench size={24} />;
+    case 'core cs':
+      return <Smartphone size={24} />;
+    default:
+      return <Code size={24} />;
+  }
+};
 
 export function Skills() {
-  const skillCategories: SkillCategory[] = [
-    {
-      title: 'Frontend',
-      icon: <Globe size={24} />,
-      skills: ['React', 'TypeScript', 'Next.js', 'Vue.js', 'Tailwind CSS', 'HTML/CSS'],
-    },
-    {
-      title: 'Backend',
-      icon: <Server size={24} />,
-      skills: ['Node.js', 'Express', 'Python', 'Django', 'REST APIs', 'GraphQL'],
-    },
-    {
-      title: 'Database',
-      icon: <Database size={24} />,
-      skills: ['PostgreSQL', 'MongoDB', 'Redis', 'MySQL', 'Firebase'],
-    },
-    {
-      title: 'Mobile',
-      icon: <Smartphone size={24} />,
-      skills: ['React Native', 'Flutter', 'iOS', 'Android'],
-    },
-    {
-      title: 'DevOps',
-      icon: <Wrench size={24} />,
-      skills: ['Docker', 'AWS', 'CI/CD', 'Kubernetes', 'Git', 'Linux'],
-    },
-    {
-      title: 'Languages',
-      icon: <Code size={24} />,
-      skills: ['JavaScript', 'TypeScript', 'Python', 'Java', 'Go', 'C++'],
-    },
-  ];
 
   return (
     <section id="skills" className="py-24 px-6 lg:px-8">
@@ -63,7 +46,7 @@ export function Skills() {
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
                 >
-                  {category.icon}
+                  {getIconForCategory(category.title)}
                 </motion.div>
                 <h3 className="text-xl group-hover:text-primary transition-colors duration-300">{category.title}</h3>
               </div>

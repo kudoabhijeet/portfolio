@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from './components/ThemeProvider';
+import { personalInfo } from './data/portfolio';
 import '@/styles/index.css';
 
 const inter = Inter({
@@ -10,13 +11,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Abhijeet Prasad | Software Engineer',
-  description:
-    'Portfolio of Abhijeet Prasad — Software Engineer building elegant, scalable solutions to complex problems.',
+  title: `${personalInfo.name} | ${personalInfo.title}`,
+  description: personalInfo.tagline,
   openGraph: {
-    title: 'Abhijeet Prasad | Software Engineer',
-    description:
-      'Portfolio of Abhijeet Prasad — Software Engineer building elegant, scalable solutions to complex problems.',
+    title: `${personalInfo.name} | ${personalInfo.title}`,
+    description: personalInfo.tagline,
     type: 'website',
   },
 };
