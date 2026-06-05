@@ -1,4 +1,4 @@
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, FileText, Github, Linkedin, Mail } from "lucide-react";
 import { motion } from "motion/react";
 import { personalInfo } from "../data/portfolio";
 
@@ -139,6 +139,17 @@ export function Hero() {
           >
             Get in Touch
           </motion.button>
+          <motion.a
+            href={personalInfo.resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-3 border border-gray-300 dark:border-gray-700 rounded-full hover:border-primary hover:text-primary transition-colors flex items-center gap-2"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <FileText size={18} />
+            View Resume
+          </motion.a>
         </motion.div>
       </div>
     </section>

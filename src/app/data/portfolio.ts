@@ -14,6 +14,8 @@ export const personalInfo = {
   phone: "+91 8130503907",
   location: "Noida, India",
   availableBadge: true,
+  resumeUrl:
+    "https://drive.google.com/file/d/10P2uh_j0wtFH0628LElOJCpZIqUygXXP/view?usp=sharing",
   socials: {
     github: "https://github.com/kudoabhijeet",
     linkedin: "https://linkedin.com/in/kudoabhijeet",
@@ -42,10 +44,9 @@ export const experience = [
       "NestJS",
     ],
     description: [
-      "Led full-stack development for OmniCentral and EmaarMind, enterprise-grade digital platforms for Emaar, using React, Node.js, TypeScript, and PostgreSQL/MongoDB",
-      "Designed and implemented RESTful APIs and real-time event-driven features, improving system performance and reducing latency across client-server communications",
-      "Developed and integrated third-party APIs, optimized frontend component reusability, and enforced UI consistency through design system and accessibility standards",
-      "Modernized legacy infrastructure for Emaar Malls by converting a .NET monolith into a NestJS-based microservices architecture",
+      "Spearheaded decomposition of Emaar Malls .NET monolith into a NestJS microservices architecture: split 4 bounded contexts into independently deployable services, reducing deployment cycle time by 25% andenabling per-team release cadence.",
+      "Led the “At the Top — Burj Khalifa” B2B API revamp — migrated the legacy .NET booking platform to Node.js + PostgreSQL; rewrote stored procedures and SQL logic, implemented Redis caching with optimizedconnection pooling for GalaxyDB endpoints serving real-time slot availability and pricing to travel-agencyclients",
+      "Led full-stack development of OmniCentral and EmaarMind — enterprise digital operations platforms for Emaar (UAE’s largest real-estate developer) — built on React, NestJS, TypeScript, and PostgreSQL, serving15 internal teams with 300+ active users.",
     ],
   },
   {
@@ -95,16 +96,25 @@ export const projects: ProjectData[] = [
   {
     title: "GetBetterAtDev",
     description:
-      "Enterprise-grade digital platforms for Emaar — built with React, Node.js, TypeScript, and PostgreSQL/MongoDB. Features real-time event-driven architecture and third-party API integrations.",
-    technologies: ["React", "Node.js", "TypeScript", "PostgreSQL", "MongoDB"],
+      "A open-source platform for developers to improve their coding skills through interactive projects and guides.",
+    technologies: [
+      "React",
+      "Node.js",
+      "GoLang",
+      "TypeScript",
+      "PostgreSQL",
+      "Redis",
+    ],
     gradient: "from-blue-600 to-violet-700",
+    liveUrl: "https://getbetterat.dev/",
   },
   {
     title: "URL Shortener",
     description:
-      "Cross-platform travel management app that reached 1,000+ installs within 90 days. Scalable backend microservices with 30% improvement in API latency.",
-    technologies: ["Node.js", "Go", "PostgreSQL", "Redis", "React Native"],
+      "A URL shortening service built with Node.js, Express, and MongoDB. It provides a simple API to create short URLs and redirect to the original URLs.",
+    technologies: ["React", "Node.js", "TypeScript", "PostgreSQL", "Redis"],
     gradient: "from-emerald-500 to-teal-700",
+    liveUrl: "https://ku2.me/",
   },
 ];
 
