@@ -1,21 +1,13 @@
 import { Briefcase, Calendar } from "lucide-react";
 import { motion } from "motion/react";
-
-interface ExperienceItem {
-  title: string;
-  company: string;
-  period: string;
-  description: string[];
-  current?: boolean;
-}
-
 import { experience as experiences } from "../data/portfolio";
 
-export function Experience() {  return (
+export function Experience() {
+  return (
     <section id="experience" className="py-24 px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <motion.h2
-          className="text-4xl md:text-5xl tracking-tight mb-16"
+          className="text-4xl md:text-5xl font-bold tracking-tight mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -40,12 +32,12 @@ export function Experience() {  return (
                     : "bg-gray-800 dark:bg-gray-300"
                 }`}
               />
-              <div className="mb-2 flex items-start justify-between flex-wrap gap-2">
+              <div className="mb-3 flex items-start justify-between flex-wrap gap-2">
                 <div>
-                  <h3 className="text-xl mb-1">{exp.title}</h3>
-                  <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400 mb-2">
+                  <h3 className="text-xl font-semibold mb-1">{exp.title}</h3>
+                  <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
                     <Briefcase size={16} />
-                    <span>{exp.company}</span>
+                    <span className="font-medium">{exp.company}</span>
                     {exp.current && (
                       <span className="px-2 py-0.5 bg-primary/10 text-primary text-xs font-medium rounded-full">
                         Current
@@ -58,6 +50,20 @@ export function Experience() {  return (
                   <span>{exp.period}</span>
                 </div>
               </div>
+
+              {exp.stack && (
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  {exp.stack.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="px-2.5 py-0.5 bg-primary/8 text-primary text-xs font-medium rounded-full border border-primary/15"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              )}
+
               <ul className="space-y-2 text-gray-700 dark:text-gray-300">
                 {exp.description.map((item, i) => (
                   <li key={i} className="flex items-start gap-3">

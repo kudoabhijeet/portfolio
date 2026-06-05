@@ -33,6 +33,14 @@ export const experience = [
     company: "Appinventiv Technologies",
     period: "Mar 2025 - Present",
     current: true,
+    stack: [
+      "React",
+      "Node.js",
+      "TypeScript",
+      "PostgreSQL",
+      "MongoDB",
+      "NestJS",
+    ],
     description: [
       "Led full-stack development for OmniCentral and EmaarMind, enterprise-grade digital platforms for Emaar, using React, Node.js, TypeScript, and PostgreSQL/MongoDB",
       "Designed and implemented RESTful APIs and real-time event-driven features, improving system performance and reducing latency across client-server communications",
@@ -45,6 +53,14 @@ export const experience = [
     company: "Advanced Adventure Gear Technologies",
     period: "Jun 2024 - Feb 2025",
     current: false,
+    stack: [
+      "Node.js",
+      "Go",
+      "PostgreSQL",
+      "Redis",
+      "React Native",
+      "GitHub Actions",
+    ],
     description: [
       "Built and launched JourneyX, a cross-platform travel management app, reaching 1,000+ installs within 90 days",
       "Designed scalable backend microservices with Node.js, Go, PostgreSQL, and Redis, achieving a 30% improvement in API latency",
@@ -57,6 +73,7 @@ export const experience = [
     company: "Surface Modification Technologies",
     period: "Jan 2022 - Jun 2024",
     current: false,
+    stack: ["REST APIs", "SQL", "ERP", "TCS ION"],
     description: [
       "Deployed TCS ION ERP across 3 branches, automating 10+ workflows and reducing operational delays by 40%",
       "Gathered business requirements, led end-to-end solution delivery, and supported post-launch operations",
@@ -69,43 +86,25 @@ export interface ProjectData {
   title: string;
   description: string;
   technologies: string[];
-  imageUrl: string;
+  gradient: string;
   liveUrl?: string;
   githubUrl?: string;
 }
 
 export const projects: ProjectData[] = [
   {
-    title: "OmniCentral & EmaarMind",
+    title: "GetBetterAtDev",
     description:
       "Enterprise-grade digital platforms for Emaar — built with React, Node.js, TypeScript, and PostgreSQL/MongoDB. Features real-time event-driven architecture and third-party API integrations.",
     technologies: ["React", "Node.js", "TypeScript", "PostgreSQL", "MongoDB"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=450&fit=crop&q=80",
+    gradient: "from-blue-600 to-violet-700",
   },
   {
-    title: "JourneyX",
+    title: "URL Shortener",
     description:
       "Cross-platform travel management app that reached 1,000+ installs within 90 days. Scalable backend microservices with 30% improvement in API latency.",
     technologies: ["Node.js", "Go", "PostgreSQL", "Redis", "React Native"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=450&fit=crop&q=80",
-  },
-  {
-    title: "Emaar Malls Modernization",
-    description:
-      "Converted a legacy .NET monolith into a NestJS-based microservices architecture, enhancing scalability, modularity, and deployment efficiency.",
-    technologies: ["NestJS", "TypeScript", "Docker", "Microservices"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=450&fit=crop&q=80",
-  },
-  {
-    title: "TCS ION ERP Deployment",
-    description:
-      "Deployed enterprise ERP across 3 branches, automating 10+ workflows and reducing operational delays by 40% through optimized queries and REST APIs.",
-    technologies: ["REST APIs", "SQL", "ERP", "Automation"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&q=80",
+    gradient: "from-emerald-500 to-teal-700",
   },
 ];
 

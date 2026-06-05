@@ -3,12 +3,11 @@ import { motion } from "motion/react";
 import { projects } from "../data/portfolio";
 
 export function Projects() {
-
   return (
     <section id="projects" className="py-24 px-6 lg:px-8 bg-gray-50 dark:bg-gray-900/50">
       <div className="max-w-7xl mx-auto">
         <motion.h2
-          className="text-4xl md:text-5xl tracking-tight mb-16"
+          className="text-4xl md:text-5xl font-bold tracking-tight mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -28,43 +27,41 @@ export function Projects() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="aspect-video bg-gray-200 dark:bg-gray-700 overflow-hidden relative">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.4 }}
-                  className="w-full h-full"
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={project.imageUrl}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </motion.div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Terminal card */}
+              <div className="aspect-video flex flex-col overflow-hidden bg-gray-950">
+                <div className="flex items-center gap-1.5 px-4 h-9 bg-gray-900 border-b border-gray-800 shrink-0">
+                  <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                  <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                  <span className="ml-auto text-xs text-gray-500 font-mono truncate">
+                    ~/{project.title.toLowerCase().replace(/\s+/g, "-")}
+                  </span>
+                </div>
+                <div className={`flex-1 bg-gradient-to-br ${project.gradient} flex items-center justify-center p-6 relative`}>
+                  <div className="absolute inset-0 bg-black/20" />
+                  <div className="relative text-center">
+                    <p className="font-mono text-xs text-white/40 mb-3">$ stack</p>
+                    <div className="flex flex-wrap gap-2 justify-center">
+                      {project.technologies.map((tech, i) => (
+                        <span
+                          key={i}
+                          className="px-2.5 py-1 bg-white/15 backdrop-blur-sm text-white text-xs font-mono rounded border border-white/10"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div className="p-6">
-                <h3 className="text-2xl mb-3 group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-2xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">
                   {project.title}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
                   {project.description}
                 </p>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, i) => (
-                    <motion.span
-                      key={i}
-                      className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-sm text-gray-700 dark:text-gray-300 rounded-full hover:bg-primary hover:text-white transition-colors duration-200"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      {tech}
-                    </motion.span>
-                  ))}
-                </div>
 
                 <div className="flex items-center gap-4">
                   {project.liveUrl && (
